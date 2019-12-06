@@ -4,6 +4,7 @@ use Illuminate\Support\Str;
 
 return [
 
+
     /*
     |--------------------------------------------------------------------------
     | Default Database Connection Name
@@ -15,7 +16,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -63,14 +64,16 @@ return [
             ]) : [],
         ],
 
+        $DATABASE_URL=parse_url('postgres://ptwigtktznfogm:8ae051a5a1fa9488b18ddc4fe3d0e9fe291c90023352446b8d26d16d5c7f5028@ec2-174-129-255-4.compute-1.amazonaws.com:5432/da0onhsuq2fpi6'),
+
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('DB_HOST', 'ec2-174-129-255-4.compute-1.amazonaws.com'),
             'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'database' => env('DB_DATABASE', 'da0onhsuq2fpi6'),
+            'username' => env('DB_USERNAME', 'ptwigtktznfogm'),
+            'password' => env('DB_PASSWORD', '8ae051a5a1fa9488b18ddc4fe3d0e9fe291c90023352446b8d26d16d5c7f5028'),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
